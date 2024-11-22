@@ -3,13 +3,6 @@
 <suite name="Tests">
 
     <test name="TestNG Tests">
-        <groups>
-            <run>
-                <include name="before"/>
-                <include name="after"/>
-            </run>
-        </groups>
-
         <classes>
             <class name="PracticeTest"/>
         </classes>
