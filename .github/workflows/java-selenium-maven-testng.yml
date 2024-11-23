@@ -34,8 +34,12 @@
         - name: Build with Maven
           run: mvn -B package --file pom.xml
 
+        - name: Check testng.xml file
+          run: ls -l src/test/resources
+
         - name: Run Tests
           run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
+          working-directory: ./Project2TestNG
 
         - name: Display Test Results
           run: cat target/surefire-reports/*.txt
