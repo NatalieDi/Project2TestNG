@@ -24,14 +24,14 @@ jobs:
         run: pwd
 
       - name: List files in the root directory
-        run: ls -R # Выведет все файлы и каталоги для диагностики
+        run: ls -R # List all files and directories for diagnostics
 
       - name: Verify testng.xml location
-        run: ls src/test/resources/testng.xml # Убедитесь, что файл testng.xml находится по ожидаемому пути
+        run: ls src/test/resources/testng.xml # Ensure testng.xml is in the expected path
 
       - name: Run Maven Tests
         run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
-        working-directory: ./Project2TestNG
+        working-directory: .
 
       - name: Display Test Results
         run: cat target/surefire-reports/*.txt
