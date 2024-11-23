@@ -44,7 +44,7 @@
           run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
           working-directory: ./Project2TestNG
 
-        - name: Display Test Results
+        - name: Display surefire reports
           run: cat target/surefire-reports/*.txt
 
         - name: Attach screenshots and reports
