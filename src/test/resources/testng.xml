@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests">
 
-        <test name="SampleTest">
-            <classes>
-                <class name="PracticeTest" />
-            </classes>
-        </test>
-    </suite>
+    <test name="SampleTest">
+        <classes>
+            <class name="PracticeTest"/>
+        </classes>
+    </test>
+</suite>
 
