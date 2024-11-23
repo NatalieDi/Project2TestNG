@@ -31,8 +31,6 @@ jobs:
 
       - name: Run Maven Tests
         run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
-        # Если проект в корне репозитория, уберите рабочую директорию
-        # Если проект внутри папки, например, Project2TestNG, установите правильный путь в рабочей директории
         working-directory: ./Project2TestNG
 
       - name: Display Test Results
