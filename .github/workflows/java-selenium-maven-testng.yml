@@ -13,10 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Java
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
+          distribution: 'temurin' # Options: 'temurin', 'zulu', 'adopt', etc.
           java-version: '17'
+          java-package: 'jdk'
 
       - name: Print working directory
         run: pwd
@@ -29,8 +31,6 @@ jobs:
 
       - name: Run Maven Tests
         run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
-        # Если проект в корне репозитория, уберите рабочую директорию
-        # Если проект внутри папки, например, Project2TestNG, установите правильный путь в рабочей директории
         working-directory: ./Project2TestNG
 
       - name: Display Test Results
