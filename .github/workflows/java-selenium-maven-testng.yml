@@ -17,20 +17,19 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: 'adoptopenjdk'  # Указываем дистрибуцию
 
       - name: Print working directory
         run: pwd
 
       - name: List files in the root directory
-        run: ls -R # Выведет все файлы и каталоги для диагностики
+        run: ls -R
 
       - name: Verify testng.xml location
-        run: ls src/test/resources/testng.xml # Убедитесь, что файл testng.xml находится по ожидаемому пути
+        run: ls src/test/resources/testng.xml
 
       - name: Run Maven Tests
         run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
-        # Если проект в корне репозитория, уберите рабочую директорию
-        # Если проект внутри папки, например, Project2TestNG, установите правильный путь в рабочей директории
         working-directory: ./Project2TestNG
 
       - name: Display Test Results
