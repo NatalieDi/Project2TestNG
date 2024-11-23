@@ -37,6 +37,9 @@
         - name: Check testng.xml file
           run: ls -l src/test/resources
 
+        - name: Test website availability
+          run: curl -I https://askomdch.com/
+
         - name: Run Tests
           run: mvn test -Dsurefire.suiteXmlFiles=src/test/resources/testng.xml
           working-directory: ./Project2TestNG

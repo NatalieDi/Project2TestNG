@@ -14,6 +14,7 @@ public class PracticeTest extends BaseTest {
     @Test
     public void testStoreName() {
         String actualTitle = driver.getTitle();
+        System.out.println("Page Title: " + actualTitle);
         Assert.assertEquals(actualTitle, "AskOmDch – Become a Selenium automation expert!", "Title does not match!");
 
     }
